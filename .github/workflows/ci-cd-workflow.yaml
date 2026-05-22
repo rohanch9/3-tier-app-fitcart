@@ -31,13 +31,15 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      # Install Trivy (Official Action - Cleaner)
+      # Install Trivy via shell (no action version dependency)
       - name: Install Trivy
-        uses: aquasecurity/trivy-action@0.28.0
-        with:
-          scan-type: fs
-          scan-ref: .
-          exit-code: '0'
+        run: |
+          curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin
+          trivy --version
+
+      # Filesystem Scan
+      - name: Trivy Filesystem Scan
+        run: trivy fs --exit-code 0 --severity HIGH,CRITICAL .
 
       # Backend Build
       - name: Build Backend Image
@@ -46,11 +48,8 @@ jobs:
 
       # Backend Image Scan
       - name: Scan Backend Image
-        uses: aquasecurity/trivy-action@0.28.0
-        with:
-          image-ref: ${{ secrets.DOCKER_REPO_BACKEND }}:${{ steps.tag.outputs.sha }}
-          severity: HIGH,CRITICAL
-          exit-code: '0'
+        run: |
+          trivy image --exit-code 0 --severity HIGH,CRITICAL ${{ secrets.DOCKER_REPO_BACKEND }}:${{ steps.tag.outputs.sha }}
 
       - name: Push Backend Image
         run: |
@@ -63,11 +62,8 @@ jobs:
 
       # Frontend Image Scan
       - name: Scan Frontend Image
-        uses: aquasecurity/trivy-action@0.28.0
-        with:
-          image-ref: ${{ secrets.DOCKER_REPO_FRONTEND }}:${{ steps.tag.outputs.sha }}
-          severity: HIGH,CRITICAL
-          exit-code: '0'
+        run: |
+          trivy image --exit-code 0 --severity HIGH,CRITICAL ${{ secrets.DOCKER_REPO_FRONTEND }}:${{ steps.tag.outputs.sha }}
 
       - name: Push Frontend Image
         run: |
