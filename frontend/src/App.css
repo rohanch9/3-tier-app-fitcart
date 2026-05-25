@@ -5,240 +5,273 @@
   text-align: left;
 }
 
-/* Amazon Header */
-.amazon-header {
-  background-color: #131921;
-  color: white;
+/* ── Header ───────────────────────────────────────────── */
+.dec-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
   display: flex;
   align-items: center;
-  padding: 8px 16px;
-  gap: 12px;
+  padding: 0 24px;
+  height: 64px;
+  gap: 16px;
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-.header-logo {
+.dec-logo {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-width: 110px;
-  cursor: pointer;
-  padding: 4px 8px;
-  border: 1px solid transparent;
-  border-radius: 2px;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  flex-shrink: 0;
 }
 
-.header-logo:hover {
-  border-color: white;
+.dec-logo-icon {
+  width: 36px;
+  height: 36px;
+  background-color: #0082C3;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: white;
+  font-weight: 900;
 }
 
-.logo-text {
-  font-size: 24px;
-  font-weight: bold;
-  color: #FF9900;
-  letter-spacing: -1px;
+.dec-logo-text {
+  font-size: 22px;
+  font-weight: 900;
+  color: #0082C3;
+  letter-spacing: -0.5px;
 }
 
-.logo-sub {
+.dec-logo-sub {
   font-size: 10px;
-  color: #ccc;
+  color: #0082C3;
+  font-weight: 700;
+  align-self: flex-end;
+  margin-bottom: 3px;
 }
 
-.header-search {
+.dec-search {
   flex: 1;
+  max-width: 680px;
   display: flex;
-  border-radius: 4px;
+  height: 42px;
+  border: 2px solid #0082C3;
+  border-radius: 6px;
   overflow: hidden;
-  max-width: 860px;
-  height: 40px;
 }
 
-.search-category {
-  background-color: #F3F3F3;
-  border: none;
-  padding: 0 10px;
-  font-size: 12px;
-  color: #555;
-  cursor: pointer;
-  border-right: 1px solid #cdcdcd;
-}
-
-.search-input {
+.dec-search input {
   flex: 1;
-  padding: 8px 12px;
+  padding: 0 14px;
   font-size: 14px;
   border: none;
   outline: none;
+  color: #1D2033;
 }
 
-.search-btn {
-  background-color: #FF9900;
+.dec-search-btn {
+  background-color: #0082C3;
   border: none;
   padding: 0 18px;
-  font-size: 20px;
+  font-size: 18px;
+  color: white;
   cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-.search-btn:hover {
-  background-color: #F3A847;
+.dec-search-btn:hover {
+  background-color: #006AA3;
 }
 
-.header-right {
+.dec-header-actions {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 20px;
+  flex-shrink: 0;
 }
 
-.header-nav-item {
+.dec-action-item {
   display: flex;
   flex-direction: column;
-  padding: 4px 10px;
+  align-items: center;
   cursor: pointer;
-  border: 1px solid transparent;
-  border-radius: 2px;
-  white-space: nowrap;
+  font-size: 12px;
+  color: #555;
+  gap: 2px;
 }
 
-.header-nav-item:hover {
-  border-color: white;
+.dec-action-item .icon {
+  font-size: 20px;
 }
 
-.nav-line1 {
-  font-size: 11px;
-  color: #ccc;
+.dec-action-item:hover {
+  color: #0082C3;
 }
 
-.nav-line2 {
-  font-size: 13px;
-  font-weight: bold;
-  color: white;
-}
-
-.cart-item {
-  flex-direction: row;
-  align-items: flex-end;
-  gap: 4px;
-}
-
-.cart-icon {
-  font-size: 30px;
-  position: relative;
-}
-
-/* Amazon Nav Bar */
-.amazon-nav {
-  background-color: #232F3E;
-  color: white;
+.dec-cart-btn {
   display: flex;
   align-items: center;
-  padding: 0 16px;
-  font-size: 13px;
+  gap: 8px;
+  background-color: #0082C3;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dec-cart-btn:hover {
+  background-color: #006AA3;
+}
+
+/* ── Navigation ───────────────────────────────────────── */
+.dec-nav {
+  background-color: #1D2033;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  gap: 2px;
   overflow-x: auto;
   white-space: nowrap;
 }
 
-.amazon-nav span {
-  padding: 10px 10px;
-  cursor: pointer;
-  border: 1px solid transparent;
-  border-radius: 2px;
+.dec-nav a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 12px 14px;
   display: inline-block;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
 }
 
-.amazon-nav span:hover {
-  border-color: white;
+.dec-nav a:hover,
+.dec-nav a.active {
+  color: #ffffff;
+  border-bottom-color: #0082C3;
 }
 
-.amazon-nav .nav-all {
-  font-weight: bold;
-  font-size: 14px;
-}
-
-/* Gym Banner */
-.amazon-banner {
-  background: linear-gradient(135deg, #0a0000 0%, #1f0800 40%, #2d1200 60%, #0a0000 100%);
-  border-bottom: 3px solid #FF9900;
-  border-top: 1px solid rgba(255, 153, 0, 0.2);
-  padding: 36px 24px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.amazon-banner::before {
-  content: '';
-  position: absolute;
-  top: -60%;
-  left: -50%;
-  width: 200%;
-  height: 220%;
-  background: radial-gradient(ellipse at center, rgba(255, 130, 0, 0.13) 0%, transparent 65%);
-  animation: bannerPulse 4s ease-in-out infinite;
-  pointer-events: none;
-}
-
-.amazon-banner::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    90deg,
-    transparent 0px,
-    transparent 40px,
-    rgba(255, 153, 0, 0.03) 40px,
-    rgba(255, 153, 0, 0.03) 41px
-  );
-  pointer-events: none;
-}
-
-.amazon-banner h1 {
-  font-size: 34px;
-  font-weight: 900;
-  color: #FF9900;
-  text-shadow: 0 0 30px rgba(255, 130, 0, 0.6), 0 2px 4px rgba(0,0,0,0.8);
-  letter-spacing: 1px;
-  position: relative;
-  z-index: 1;
-}
-
-.amazon-banner p {
-  font-size: 15px;
-  color: #aaa;
-  margin-top: 8px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  position: relative;
-  z-index: 1;
-}
-
-.banner-stats {
+/* ── Hero Banner ──────────────────────────────────────── */
+.dec-banner {
+  background: linear-gradient(135deg, #0082C3 0%, #005A8E 50%, #003D66 100%);
+  padding: 48px 24px;
   display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 20px;
-  position: relative;
-  z-index: 1;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
 }
 
-.banner-stat {
+.dec-banner-content {
+  flex: 1;
+  min-width: 280px;
+}
+
+.dec-banner-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  color: #7EC8E3;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.dec-banner h1 {
+  font-size: 36px;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.dec-banner h1 span {
+  color: #7EC8E3;
+}
+
+.dec-banner p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.75);
+  max-width: 480px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.dec-banner-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffffff;
+  color: #0082C3;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.dec-banner-cta:hover {
+  background-color: #E8F4FC;
+}
+
+.dec-banner-stats {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.dec-stat-card {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  padding: 20px 28px;
   text-align: center;
+  min-width: 100px;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 
-.banner-stat-value {
-  font-size: 22px;
-  font-weight: bold;
-  color: #FF9900;
+.dec-stat-number {
+  font-size: 28px;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1;
 }
 
-.banner-stat-label {
+.dec-stat-label {
   font-size: 11px;
-  color: #888;
+  color: rgba(255,255,255,0.65);
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-top: 4px;
 }
 
-@keyframes bannerPulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.7; transform: scale(1.04); }
+/* ── Section title ────────────────────────────────────── */
+.dec-section-title {
+  font-size: 20px;
+  font-weight: 900;
+  color: #1D2033;
+  padding: 28px 24px 0;
+  letter-spacing: -0.3px;
+}
+
+.dec-section-title span {
+  display: inline-block;
+  width: 4px;
+  height: 20px;
+  background: #0082C3;
+  border-radius: 2px;
+  margin-right: 10px;
+  vertical-align: middle;
 }

@@ -18,7 +18,7 @@ const ReadContentBox = ({ content }) => {
           <div className="product-rating">
             ★★★★★ <span className="rating-count">(128)</span>
           </div>
-          <span className="badge-stock">✓ Active</span>
+          <span className="badge-active">✓ Active</span>
         </div>
       </div>
       <div className="product-stats">

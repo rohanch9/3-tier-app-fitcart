@@ -4,18 +4,16 @@
   padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 0;
-  border: 1px solid #e8e8e8;
+  border: 1px solid #E5E7EB;
   border-radius: 10px;
-  background: #ffffff;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  background: #FAFAFA;
 }
 
-/* ── Field group (label + input) ──────────────────────── */
+/* ── Field group ──────────────────────────────────────── */
 .field-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 12px;
+  margin-bottom: 13px;
 }
 
 .field-label {
@@ -23,57 +21,52 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  color: #555;
+  color: #6B7280;
   margin-bottom: 5px;
-}
-
-.field-label span {
-  margin-right: 4px;
 }
 
 /* ── Inputs ───────────────────────────────────────────── */
 .content-box input {
   width: 100%;
-  padding: 10px 12px;
-  border: 1.5px solid #d0d0d0;
+  padding: 10px 13px;
+  border: 1.5px solid #D1D5DB;
   border-radius: 6px;
   font-size: 14px;
-  color: #1a1a1a;
-  background: #fafafa;
+  color: #1D2033;
+  background: #ffffff;
   outline: none;
   box-sizing: border-box;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .content-box input:focus {
-  border-color: #FF9900;
-  box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.18);
-  background: #fff;
+  border-color: #0082C3;
+  box-shadow: 0 0 0 3px rgba(0, 130, 195, 0.15);
 }
 
 .content-box input::placeholder {
-  color: #aaa;
+  color: #9CA3AF;
   font-size: 13px;
 }
 
 /* ── Buttons ──────────────────────────────────────────── */
 .btn-primary {
   margin-top: 4px;
-  padding: 11px 16px;
-  background: linear-gradient(to bottom, #FFD814, #F0A500);
-  color: #111;
-  border: 1px solid #F0A500;
-  border-radius: 8px;
+  padding: 12px 16px;
+  background-color: #0082C3;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
   width: 100%;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.3px;
-  transition: filter 0.15s, transform 0.1s;
+  transition: background-color 0.2s, transform 0.1s;
 }
 
 .btn-primary:hover {
-  filter: brightness(1.06);
+  background-color: #006AA3;
   transform: translateY(-1px);
 }
 
@@ -83,52 +76,58 @@
 
 .btn-danger {
   margin-top: 4px;
-  padding: 11px 16px;
-  background: linear-gradient(to bottom, #ff5f5f, #cc0000);
-  color: #fff;
-  border: 1px solid #a50000;
-  border-radius: 8px;
+  padding: 12px 16px;
+  background-color: #EF4444;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
   width: 100%;
   font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.3px;
-  transition: filter 0.15s, transform 0.1s;
+  transition: background-color 0.2s, transform 0.1s;
 }
 
 .btn-danger:hover {
-  filter: brightness(1.08);
+  background-color: #DC2626;
   transform: translateY(-1px);
 }
 
-/* ── Date tag inside form ─────────────────────────────── */
+/* ── Date tag ─────────────────────────────────────────── */
 .date-tag {
   font-size: 11px;
-  color: #888;
-  margin-bottom: 12px;
-  padding: 5px 8px;
-  background: #f5f5f5;
-  border-radius: 4px;
-  border-left: 3px solid #FF9900;
+  color: #6B7280;
+  margin-bottom: 13px;
+  padding: 6px 10px;
+  background: #EFF6FF;
+  border-radius: 5px;
+  border-left: 3px solid #0082C3;
 }
 
-/* ── Product card (Read & Delete) ─────────────────────── */
+/* ── Product card ─────────────────────────────────────── */
 .product-card {
   padding: 16px !important;
-  gap: 0 !important;
+  background: #ffffff !important;
 }
 
 .product-header {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 12px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #F3F4F6;
 }
 
 .product-emoji {
-  font-size: 32px;
+  width: 48px;
+  height: 48px;
+  background: #EFF6FF;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
   flex-shrink: 0;
 }
 
@@ -138,41 +137,54 @@
 
 .product-name {
   font-size: 15px;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin-bottom: 3px;
+  font-weight: 800;
+  color: #1D2033;
+  margin-bottom: 4px;
   line-height: 1.3;
+  text-transform: capitalize;
 }
 
 .product-rating {
-  color: #FF9900;
+  color: #F59E0B;
   font-size: 12px;
 }
 
 .rating-count {
-  color: #007185;
+  color: #0082C3;
   font-size: 11px;
-  margin-left: 2px;
+  margin-left: 3px;
 }
 
-/* ── Stat row (weight / diet / date) ─────────────────── */
+.badge-active {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  color: #059669;
+  background: #D1FAE5;
+  border-radius: 20px;
+  padding: 2px 8px;
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── Stat rows ────────────────────────────────────────── */
 .product-stats {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 9px;
 }
 
 .stat-row {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-size: 13px;
-  color: #333;
 }
 
 .stat-icon {
   font-size: 14px;
-  width: 20px;
+  width: 22px;
   text-align: center;
   flex-shrink: 0;
 }
@@ -180,44 +192,34 @@
 .stat-label {
   font-size: 11px;
   font-weight: 600;
-  color: #888;
+  color: #9CA3AF;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  min-width: 52px;
+  min-width: 50px;
 }
 
 .stat-value {
   font-weight: 600;
-  color: #1a1a1a;
+  color: #1D2033;
 }
 
 .stat-value.weight-value {
   font-size: 15px;
-  color: #0f1111;
+  font-weight: 800;
+  color: #0082C3;
 }
 
 .stat-value.diet-value {
-  color: #2e7d32;
+  color: #059669;
 }
 
 .stat-value.date-value {
-  color: #888;
+  color: #9CA3AF;
   font-size: 12px;
   font-weight: 400;
 }
 
-.badge-stock {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 700;
-  color: #007600;
-  background: #e8f5e9;
-  border-radius: 4px;
-  padding: 2px 7px;
-  margin-top: 2px;
-}
-
-/* ── Spinner on number input ──────────────────────────── */
+/* ── Spinner ──────────────────────────────────────────── */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;

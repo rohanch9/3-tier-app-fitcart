@@ -2,9 +2,9 @@
   display: flex;
   justify-content: center;
   gap: 20px;
-  padding: 28px 24px 48px;
+  padding: 24px 24px 56px;
   flex-wrap: wrap;
-  max-width: 1400px;
+  max-width: 1500px;
   margin: 0 auto;
 }
 
