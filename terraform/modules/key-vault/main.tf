@@ -18,7 +18,7 @@ resource "azurerm_key_vault" "this" {
 
   # RBAC rather than the legacy access-policy model: permissions are ordinary
   # Azure role assignments, so the same SP that runs Terraform can be granted access.
-  enable_rbac_authorization = true
+  rbac_authorization_enabled = true
 
   # Reachable from GitHub-hosted runners. No private endpoint by design.
   public_network_access_enabled = true
